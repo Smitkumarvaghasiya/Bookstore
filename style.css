@@ -1,0 +1,238 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+header .categories {
+    font-size: 1rem;
+    margin-left: auto; /* Pushes categories to the right */
+}
+
+header .back {
+    font-size: 1rem;
+}
+
+/* Main Styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.background-image {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.background-image .details {
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.background-image p {
+    font-size: 1.2rem;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dropdown-menu select {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    outline: none;
+    transition: all 0.3s ease;
+    appearance: none; /* Removes default appearance (e.g., arrow) */
+}
+
+.dropdown-menu select:hover, .dropdown-menu select:focus {
+    border-color: #666;
+}
+
+.dropdown-menu::before {
+    content: '\25BC'; /* Down arrow character */
+    font-size: 1.2em;
+    color: #666;
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 0.5em);
+    pointer-events: none; /* Ensures the arrow is not clickable */
+}
+
+.dropdown-menu select:hover ~::before,
+.dropdown-menu select:focus ~::before {
+    color: #333;
+}
+
+.dropdown-menu select option {
+    background-color: #fff;
+    color: #333;
+}
+
+.dropdown-menu select option:hover {
+    background-color: #f0f0f0;
+}
+
+/* Book List Styles */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.book-item {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+}
+
+.book-item img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.book-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+/* Book Details Styles */
+.book-details {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 100px auto 50px; /* Adjust margin to create space between book details and footer */
+}
+
+.book-details img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.book-details h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.book-details h3 {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.book-details p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: left; 
+    padding: 10px 20px; 
+    position: -ms-page;
+    width: 100%;
+    bottom: 0;
+}
+
+footer .contact {
+    margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .book-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .book-item {
+        padding: 10px;
+    }
+
+    .book-details {
+        padding: 10px;
+    }
+}
